@@ -1,0 +1,18 @@
+version: '2.1'
+
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=development
+      - DB_URL=${DB_URL}  # From .env file
+      - PORT=${PORT} #FROM .env file
+    
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:5000/health || exit 1"]
+      interval: 1m30s
+      timeout: 30s
+      retries: 3
+      start_period: 30s

@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4200;
 const DbUrl = process.env.DB_URL
 const DbName = process.env.DBNAME
 const DbTable = process.env.DBTABLE
